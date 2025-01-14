@@ -1,0 +1,9 @@
+[Unit]
+Description=Check sale-monitor prices daily
+
+[Timer]
+Persistent=true
+OnCalendar=daily
+
+[Install]
+WantedBy=timers.target

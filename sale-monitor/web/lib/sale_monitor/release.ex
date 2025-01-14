@@ -25,4 +25,10 @@ defmodule SaleMonitor.Release do
   defp load_app do
     Application.load(@app)
   end
+
+  def check_all_prices do
+    load_app()
+    Application.ensure_all_started(@app)
+    SaleMonitor.PriceChecks.check_all_prices()
+  end
 end
