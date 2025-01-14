@@ -1,0 +1,21 @@
+[Unit]
+Description=A website to monitor sales
+
+[Container]
+Image=ghcr.io/leifmetcalf/sale-monitor-web:latest
+Pull=newer
+Network=host
+Exec=/app/bin/server
+Environment=PORT=4001
+Environment=SCRAPER_URL=http://localhost:3000
+Environment=DATABASE_URL=ecto://postgres@localhost/sale_monitor
+Secret=sale-monitor-secret,type=env,target=SECRET_KEY_BASE
+Secret=MAILPACE_TOKEN,type=env
+Secret=SITE_PASSWORD,type=env
+RunInit=true
+
+[Service]
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target

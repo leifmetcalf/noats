@@ -1,0 +1,16 @@
+[Unit]
+Description=A sale scraper server
+
+[Container]
+Image=ghcr.io/leifmetcalf/sale-monitor-scraper:latest
+Pull=newer
+Network=host
+Environment=PORT=3000
+Secret=GOOGLE_AI_API_KEY,type=env
+RunInit=true
+
+[Service]
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target

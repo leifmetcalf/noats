@@ -1,0 +1,18 @@
+[Unit]
+Description=A simple live chat website
+
+[Container]
+Image=ghcr.io/leifmetcalf/chat-app:latest
+Pull=newer
+Network=host
+Exec=/app/bin/server
+Environment=PORT=4000
+Environment=DATABASE_URL=ecto://postgres@localhost/chat_app
+Secret=chat-app-secret,type=env,target=SECRET_KEY_BASE
+RunInit=true
+
+[Service]
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target

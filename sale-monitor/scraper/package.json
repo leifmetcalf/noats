@@ -1,0 +1,23 @@
+{
+    "name": "scraper",
+    "version": "0.0.1",
+    "type": "module",
+    "description": "Scrape product prices from websites",
+    "dependencies": {
+        "@google/generative-ai": "^0.21.0",
+        "crawlee": "^3.0.0",
+        "express": "^5.0.0",
+        "playwright": "*"
+    },
+    "devDependencies": {
+        "@types/node": "^22.0.0",
+        "@types/express": "^5.0.0",
+        "tsx": "^4.4.0",
+        "typescript": "~5.7.0"
+    },
+    "author": "Leif Metcalf",
+    "license": "ISC",
+    "scripts": {
+        "build": "tsc"
+    }
+}

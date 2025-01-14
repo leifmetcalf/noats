@@ -1,0 +1,6 @@
+# crawlee storage folder
+storage
+
+node_modules
+
+.env
