@@ -37,7 +37,7 @@ defmodule SaleMonitorWeb.ProductLive.Index do
           <div>{@products[product_id].status}</div>
         </div>
 
-        <div id={"detail-#{product_id}"} class="col-span-5">
+        <div id={"detail-#{product_id}"} class="col-span-5 hidden">
           <.external_link href={@products[product_id].product.url}>
             {@products[product_id].product.name}
           </.external_link>

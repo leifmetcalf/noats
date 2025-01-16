@@ -42,7 +42,6 @@ const schema = {
                     nullable: true,
                 },
             },
-            required: ["price", "is_sale", "pre_sale_price"],
         },
     },
     required: [],
@@ -67,8 +66,9 @@ const crawler = new PlaywrightCrawler({
         const prompt = "The image is a screenshot of a product webpage. " +
             "What is the price of the product? " +
             "Is it on sale? " +
-            "What (if any) is the reported price before the sale? " +
-            "If no price is visible, describe the page in the error field.";
+            "What (if any) is the claimed price before the sale? " +
+            "If no price is visible, describe the page in the error field. " +
+            "Return exactly one of the error field or the result field.";
         const image = {
             inlineData: {
                 data: screenshot.toString("base64"),
